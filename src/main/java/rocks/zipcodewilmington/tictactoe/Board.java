@@ -9,8 +9,8 @@ public class Board {
     Character[] r2 = getRow2();
     Character[] r3 = getRow3();
     Character[] c1 = getCol1();
-    Character[] c2 = getCol1();
-    Character[] c3 = getCol1();
+    Character[] c2 = getCol2();
+    Character[] c3 = getCol3();
 
     //This is essentially a setter. It is setting the board, there is no return value.
     public Board(Character[][] matrix) {
@@ -42,41 +42,63 @@ public class Board {
         return col2;
     }
 
-    public Character[] getcol3() {
+    public Character[] getCol3() {
         Character[] col3 = {matrix[0][2], matrix[1][2], matrix[2][2]};
         return col3;
     }
 
     public Boolean isInFavorOfX() {
         for (int i = 0; i < 3; i++) {
-            switch (i) {
-                case 0 : {
-                    if (r1[i].equals('X'))
-                        return true; }
-                break;
-                case 1 : {
-                    if (r2[i].equals('X'))
-                        return true; }
-                break;
-                case 2 : {
-                    if (r3[i].equals('X'))
-                        return true; }
-                break;
-                case 3 : {
-                    if (c1[i].equals('X'))
-                        return true; }
-                break;
-                case 4 : {
-                    if (c2[i].equals('X'))
-                        return true; }
-                break;
-                case 5 : {
-                    if (c3[i].equals('X'))
-                        return true; }
-                break;
+            if (getRow1().equals('X')) {
+                return true;
+            }
+            if (getRow2().equals('X')) {
+                return true;
+            }
+            if (getRow3().equals('X')) {
+                return true;
+            }
+            if (getCol1().equals('X')) {
+                return true;
+            }
+            if (getCol2().equals("X")) {
+                return true;
+            }
+            if (getCol3().equals('X')) {
+                return true;
             }
         } return false;
     }
+
+//        for (int i = 0; i < 6; i++) {
+//            switch (i) {
+//                case 0 : {
+//                    if (r1[i].equals('X'))
+//                        return true; }
+//                break;
+//                case 1 : {
+//                    if (r2[i].equals('X'))
+//                        return true; }
+//                break;
+//                case 2 : {
+//                    if (r3[i].equals('X'))
+//                        return true; }
+//                break;
+//                case 3 : {
+//                    if (c1[i].equals('X'))
+//                        return true; }
+//                break;
+//                case 4 : {
+//                    if (c2[i].equals('X'))
+//                        return true; }
+//                break;
+//                case 5 : {
+//                    if (c3[i].equals('X'))
+//                        return true; }
+//                break;
+//            }
+//        } return false;
+//    }
 
         // Begin with stubs then flesh out processes.
         // First, create a method that retrieves any of the three rows.
@@ -88,34 +110,57 @@ public class Board {
 
     public Boolean isInFavorOfO() {
         for (int i = 0; i < 3; i++) {
-            switch (i) {
-                case 0 : {
-                    if (r1[i].equals('O'))
-                        return true; }
-                break;
-                case 1 : {
-                    if (r2[i].equals('O'))
-                        return true; }
-                break;
-                case 2 : {
-                    if (r3[i].equals('O'))
-                        return true; }
-                break;
-                case 3 : {
-                    if (c1[i].equals('O'))
-                        return true; }
-                break;
-                case 4 : {
-                    if (c2[i].equals('O'))
-                        return true; }
-                break;
-                case 5 : {
-                    if (c3[i].equals('O'))
-                        return true; }
-                break;
+            if (getRow1().equals('O')) {
+                return true;
+            }
+            if (getRow2().equals('O')) {
+                return true;
+            }
+            if (getRow3().equals('O')) {
+                return true;
+            }
+            if (getCol1().equals('O')) {
+                return true;
+            }
+            if (getCol2().equals("O")) {
+                return true;
+            }
+            if (getCol3().equals('O')) {
+                return true;
             }
         } return false;
     }
+
+
+//        for (int i = 0; i < 3; i++) {
+//            switch (i) {
+//                case 0 : {
+//                    if (r1[i].equals('O'))
+//                        return true; }
+//                break;
+//                case 1 : {
+//                    if (r2[i].equals('O'))
+//                        return true; }
+//                break;
+//                case 2 : {
+//                    if (r3[i].equals('O'))
+//                        return true; }
+//                break;
+//                case 3 : {
+//                    if (c1[i].equals('O'))
+//                        return true; }
+//                break;
+//                case 4 : {
+//                    if (c2[i].equals('O'))
+//                        return true; }
+//                break;
+//                case 5 : {
+//                    if (c3[i].equals('O'))
+//                        return true; }
+//                break;
+//            }
+//        } return false;
+//    }
 
     public Boolean isTie() {
         if (isInFavorOfX() && isInFavorOfO()) {
@@ -127,7 +172,7 @@ public class Board {
         if (isInFavorOfX() && !isInFavorOfO() && !isTie()) {
             return "X marks the spot! X's win!";
         } else if (isInFavorOfO() && !isInFavorOfX() && !isTie()) {
-            return "O, O, O you sly fox, you! O's wins!";
+            return "O, O, O you sly fox, you! O's win!";
         } return null;
     }
 }
